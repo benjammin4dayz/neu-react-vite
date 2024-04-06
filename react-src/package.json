@@ -9,7 +9,7 @@
     "build": "vite build || npm run troubleshoot -s",
     "lint": "eslint src/ --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "troubleshoot": "echo '\n\u001b[1;31mWARNING: Your app might not work properly. (non-zero exit code)\u001b[0m\n\u001b[1;33m  > Are your frontend dependencies installed correctly?\u001b[0m\n'"
+    "troubleshoot": "echo '\n\u001b[1;31mWARNING: Your app might not work! (non-zero exit code)\u001b[0m\n\u001b[1;33m  > Are frontend dependencies installed?\u001b[0m\n'"
   },
   "dependencies": {
     "@neutralinojs/lib": "^5.1.0",
@@ -18,12 +18,12 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
+    "@types/react-dom": "^18.2.24",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "vite": "^5.2.0"
+    "vite": "^5.2.8"
   }
 }
