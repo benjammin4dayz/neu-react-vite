@@ -1,0 +1,63 @@
+name: Create Neutralino.js app
+
+env:
+  # Path to frontend source relative to `neutralino.config.json`
+  FRONTEND_ROOT: react-src/ # use a dot `.` for same directory
+
+  # Unpublished drafts can be found at `github.com/<user>/<repo>/releases`
+  DRAFT: true
+
+  # Comment out a line (by prefixing it with `# `) to delete that binary and save a few MB.
+  # Note that comments are not syntactically supported: a script will handle the exclusion.
+  NEU_BUILD_TARGETS: |
+    "neutralino-linux_arm64"
+    "neutralino-linux_armhf"
+    "neutralino-linux_x64"
+    "neutralino-mac_arm64"
+    "neutralino-mac_universal"
+    "neutralino-mac_x64"
+    "neutralino-win_x64.exe"
+
+on:
+  push:
+    tags: '*'
+
+jobs:
+  build:
+    name: Creating Neutralino.js app
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Install frontend dependencies
+        run: cd ${{ env.FRONTEND_ROOT }} && npm ci
+
+      - name: Setup Neutralino.js
+        run: |
+          npm install -g @neutralinojs/neu
+          neu update
+
+      - name: Remove unused binaries
+        run: |
+          for file in $(echo "$NEU_BUILD_TARGETS" | sed -E 's/^# ?"//; s/"$//; t; d' | xargs -n1 echo); do
+            if [ -f bin/$file ]; then
+              rm bin/$file
+            fi
+          done
+
+      - name: Build Neutralino.js app
+        run: neu build --release
+
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: './dist/*.zip,./dist/*.tar.gz'
+          draft: ${{ env.DRAFT }}

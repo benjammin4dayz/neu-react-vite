@@ -1,0 +1,46 @@
+{
+  "applicationId": "neu.vite.react",
+  "version": "0.1.0",
+  "defaultMode": "window",
+  "documentRoot": "/react-src/dist/",
+  "url": "/",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "nativeAllowList": ["app.*"],
+  "logging": {
+    "enabled": true,
+    "writeToLogFile": true
+  },
+  "modes": {
+    "window": {
+      "title": "Neu-React-Vite App",
+      "width": 800,
+      "height": 500,
+      "minWidth": 400,
+      "minHeight": 200,
+      "fullScreen": false,
+      "icon": "/react-src/public/icon.png",
+      "alwaysOnTop": false,
+      "enableInspector": false,
+      "borderless": false,
+      "maximize": false,
+      "resizable": true,
+      "hidden": false,
+      "useSavedState": false,
+      "exitProcessOnClose": true
+    }
+  },
+  "cli": {
+    "binaryName": "myapp",
+    "resourcesPath": "/react-src/dist/",
+    "extensionsPath": "/extensions/",
+    "frontendLibrary": {
+      "patchFile": "/react-src/index.html",
+      "devUrl": "http://localhost:3000",
+      "projectPath": "/react-src/",
+      "initCommand": "npm ci",
+      "devCommand": "npm start -- --window-enable-inspector",
+      "buildCommand": "npm run build"
+    }
+  }
+}
