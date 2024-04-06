@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "start": "npm run dev",
-    "dev": "vite || npm run check:deps",
-    "build": "vite build || npm run check:deps",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "dev": "vite || npm run troubleshoot -s",
+    "build": "vite build || npm run troubleshoot -s",
+    "lint": "eslint src/ --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "check:deps": "echo '\u001b[1;31mFATAL: missing frontend dependencies. Try \"cd react-src/ && npm ci && cd ..\"\u001b[0m' && exit 1"
+    "troubleshoot": "echo '\n\u001b[1;31mWARNING: Your app might not work properly. (non-zero exit code)\u001b[0m\n\u001b[1;33m  > Are your frontend dependencies installed correctly?\u001b[0m\n'"
   },
   "dependencies": {
     "@neutralinojs/lib": "^5.1.0",
