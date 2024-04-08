@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import neutralinojsLogo from './assets/neutralinojs.svg';
 import reactLogo from './assets/react.svg';
 import viteLogo from './assets/vite.svg';
@@ -6,9 +7,12 @@ import './App.css';
 import * as Neutralino from '@neutralinojs/lib';
 
 function App() {
-  // Check for a global variable which is only defined if init was successful
-  //
-  const isNeutralinoReady = window?.NL_VERSION ? true : false;
+  const [neutralinoReady, setNeutralinoReady] = useState(false);
+  useEffect(() => {
+    // Check for a global variable which is only defined if init was successful
+    //
+    setNeutralinoReady(window?.NL_VERSION ? true : false);
+  }, [neutralinoReady]);
 
   // Potential workaround if the app hangs when closing the main window.
   // https://github.com/neutralinojs/neutralinojs/issues/1179
@@ -36,14 +40,14 @@ function App() {
       <div className="card">
         <div>
           Neutralino.js Status:{' '}
-          {isNeutralinoReady ? (
+          {neutralinoReady ? (
             <span style={{ color: 'green' }}>READY (v{window.NL_VERSION})</span>
           ) : (
             <span style={{ color: 'red' }}>ERROR</span>
           )}
         </div>
         <br />
-        {isNeutralinoReady && (
+        {neutralinoReady && (
           <div>
             <button onClick={shutdownApp}>Shutdown App</button>
           </div>

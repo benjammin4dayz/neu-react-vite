@@ -1,27 +1,25 @@
-# <img src='react-src/src/assets/neutralinojs.svg' alt='neu-icon' width='24px' height='24px' /> neu-react-vite <img src='react-src/src/assets/react.svg' alt='react-icon' width='24' height='24' />
+# <img align="left" alt="neu-icon" height="48" src="react-src/src/assets/neutralinojs.svg" />neu-react-vite<img align="right" alt="react-icon" height="48" src="react-src/src/assets/vite.svg" /><img align="right" alt="react-icon" height="48" src="react-src/src/assets/react.svg" />
 
 A minimal template for building Neutralino.js apps using React and Vite.
 
 ## Get Started
 
-### Install [neu CLI](https://neutralino.js.org/docs/cli/neu-cli)
-
-    npm i -g @neutralinojs/neu
-
-### Initialize Project
+### Using `neu` ([neu CLI][neu-cli])
 
 ```bash
-neu create myapp --template benjammin4dayz/neu-react-vite
-cd myapp
+neu create neu-react-vite --template benjammin4dayz/neu-react-vite
+cd neu-react-vite
+neu run
 ```
 
-### Start Developing
+### Using `git` and `npm` ([scripts][npm-scripts])
 
-    neu run
-
-### Create Neutralino.js App
-
-    neu build
+```bash
+git clone --depth=1 https://github.com/benjammin4dayz/neu-react-vite.git
+cd neu-react-vite
+npm run setup
+npm start
+```
 
 ## GitHub Actions
 
@@ -32,4 +30,10 @@ git tag <tag_name>
 git push origin <tag_name>
 ```
 
-[View workflow](.github/workflows/create-neutralinojs-app.yml)
+[View workflow][workflow-file]
+
+<!-- Links -->
+
+[neu-cli]: https://neutralino.js.org/docs/cli/neu-cli
+[npm-scripts]: ./package.json
+[workflow-file]: .github/workflows/create-neutralinojs-app.yml
