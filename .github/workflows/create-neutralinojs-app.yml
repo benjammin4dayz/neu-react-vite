@@ -1,9 +1,6 @@
 name: Create Neutralino.js app
 
 env:
-  # Path to frontend source relative to `neutralino.config.json`
-  FRONTEND_ROOT: react-src/ # use a dot `.` for same directory
-
   # Unpublished drafts can be found at `github.com/<user>/<repo>/releases`
   DRAFT: true
 
@@ -37,13 +34,8 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install frontend dependencies
-        run: cd ${{ env.FRONTEND_ROOT }} && npm ci
-
-      - name: Setup Neutralino.js
-        run: |
-          npm install -g @neutralinojs/neu
-          neu update
+      - name: Install dependencies
+        run: npm run setup
 
       - name: Remove unused binaries
         run: |
@@ -54,7 +46,7 @@ jobs:
           done
 
       - name: Build Neutralino.js app
-        run: neu build --release
+        run: npm run build:release
 
       - name: Create release
         uses: ncipollo/release-action@v1
