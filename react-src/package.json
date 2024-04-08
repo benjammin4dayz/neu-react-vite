@@ -1,15 +1,14 @@
 {
-  "name": "myapp-react",
+  "name": "react-vite",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
     "start": "npm run dev",
-    "dev": "vite || npm run troubleshoot -s",
-    "build": "vite build || npm run troubleshoot -s",
+    "dev": "vite",
+    "build": "vite build",
     "lint": "eslint src/ --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "troubleshoot": "echo '\n\u001b[1;31mWARNING: Your app might not work! (non-zero exit code)\u001b[0m\n\u001b[1;33m  > Are frontend dependencies installed?\u001b[0m\n'"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@neutralinojs/lib": "^5.1.0",

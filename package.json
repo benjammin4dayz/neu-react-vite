@@ -1,0 +1,22 @@
+{
+  "name": "neu-react-vite",
+  "repository": "https://github.com/benjammin4dayz/neu-react-vite",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "react-src"
+  ],
+  "scripts": {
+    "build": "neu build",
+    "build:release": "neu build --release",
+    "clean": "npm run clean:neu -s && npm run clean:react -s",
+    "clean:neu": "rm -rf dist/ bin/",
+    "clean:react": "cd react-src && rm -rf dist/ node_modules/",
+    "lint": "npm run lint --workspaces --if-present",
+    "setup": "npm ci && neu update",
+    "start": "neu run"
+  },
+  "devDependencies": {
+    "@neutralinojs/neu": "^11.0.1"
+  }
+}
