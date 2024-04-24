@@ -38,8 +38,8 @@
       "patchFile": "/react-src/index.html",
       "devUrl": "http://localhost:3000",
       "projectPath": "/react-src/",
-      "initCommand": "npm ci",
-      "devCommand": "npm start",
+      "initCommand": "cd .. && npm ci",
+      "devCommand": "npm run dev",
       "buildCommand": "npm run build"
     }
   }
