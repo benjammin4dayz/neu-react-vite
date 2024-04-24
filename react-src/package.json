@@ -18,11 +18,17 @@
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.24",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react-swc": "^3.6.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "vite": "^5.2.8"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-darwin-arm64": "^4.16.4",
+    "@rollup/rollup-darwin-x64": "^4.16.4",
+    "@rollup/rollup-linux-x64-gnu": "^4.16.4",
+    "@rollup/rollup-win32-x64-msvc": "^4.16.4"
   }
 }
