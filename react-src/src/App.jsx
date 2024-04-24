@@ -6,18 +6,24 @@ import './App.css';
 
 import * as Neutralino from '@neutralinojs/lib';
 
+const logError = (err) => console.log(err);
+const shutdownApp = () => {
+  // workaround if the app hangs when closing the main window
+  // https://github.com/neutralinojs/neutralinojs/issues/1179
+  Neutralino.app.exit().catch(logError);
+};
+
 function App() {
   const [neutralinoReady, setNeutralinoReady] = useState(false);
-  useEffect(() => {
-    // Check for a global variable which is only defined if init was successful
-    //
-    setNeutralinoReady(window?.NL_VERSION ? true : false);
-  }, [neutralinoReady]);
+  const onReady = () => setNeutralinoReady(true);
 
-  // Potential workaround if the app hangs when closing the main window.
-  // https://github.com/neutralinojs/neutralinojs/issues/1179
-  //
-  const shutdownApp = () => Neutralino.app.exit();
+  useEffect(() => {
+    Neutralino.events.on('ready', onReady).catch(logError);
+
+    return () => {
+      Neutralino.events.off('ready', onReady).catch(logError);
+    };
+  }, []);
 
   return (
     <>

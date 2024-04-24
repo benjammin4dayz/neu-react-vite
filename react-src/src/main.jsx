@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
-import { init as initNeutralino } from '@neutralinojs/lib';
+import * as Neutralino from '@neutralinojs/lib';
 
 try {
-  initNeutralino();
+  Neutralino.init();
 } catch (err) {
   console.warn('Neutralino.js failed to initialize.\n\n', err);
 }
