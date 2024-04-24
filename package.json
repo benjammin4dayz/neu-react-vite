@@ -10,11 +10,11 @@
     "build": "neu build",
     "build:release": "neu build --release",
     "clean": "npm run clean:neu -s && npm run clean:react -s",
-    "clean:neu": "rm -rf dist/ bin/",
+    "clean:neu": "rm -rf dist/ bin/ node_modules/",
     "clean:react": "cd react-src && rm -rf dist/ node_modules/",
     "lint": "npm run lint --workspaces --if-present",
     "setup": "npm ci && neu update",
-    "start": "neu run"
+    "start": "neu run -- --window-enable-inspector"
   },
   "devDependencies": {
     "@neutralinojs/neu": "^11.0.1"

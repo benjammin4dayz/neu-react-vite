@@ -39,7 +39,7 @@
       "devUrl": "http://localhost:3000",
       "projectPath": "/react-src/",
       "initCommand": "npm ci",
-      "devCommand": "npm start -- --window-enable-inspector",
+      "devCommand": "npm start",
       "buildCommand": "npm run build"
     }
   }
