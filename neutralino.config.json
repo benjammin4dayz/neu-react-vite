@@ -1,5 +1,5 @@
 {
-  "applicationId": "neu.vite.react",
+  "applicationId": "neu.react.vite",
   "version": "0.1.0",
   "defaultMode": "window",
   "documentRoot": "/react-src/dist/",
@@ -31,7 +31,7 @@
     }
   },
   "cli": {
-    "binaryName": "myapp",
+    "binaryName": "neu-react-vite",
     "resourcesPath": "/react-src/dist/",
     "extensionsPath": "/extensions/",
     "frontendLibrary": {

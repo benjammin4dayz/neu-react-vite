@@ -2,29 +2,59 @@
 
 A minimal template for building Neutralino.js apps using React and Vite.
 
+## About
+
+This Neutralino app template features HMR _(Hot Module Replacement)_ and uses SWC _(Speedy Web Compiler)_. It can be converted to TypeScript with a <a href="#configuration">single command</a>!
+
+### Demo
+
+Start developing your app in _less than 30 seconds!_
+
+<video src="https://github.com/benjammin4dayz/neu-react-vite/assets/42326027/cdbbc6cd-a485-42dc-b620-1c285bac8f17"></video>
+
 ## Getting Started
 
 This template abstracts the setup process by using the [`neu` CLI][neu-cli] under the hood.
 
+### Prerequisites
+
+- Node.js
+- npm
+
 ### Installation
 
-1. Clone the repo
+1. Create a new app with `neu create`
 
    ```bash
-   git clone --depth=1 https://github.com/benjammin4dayz/neu-react-vite.git
-   cd neu-react-vite
+   npx @neutralinojs/neu create myapp --template benjammin4dayz/neu-react-vite
+   cd myapp
    ```
 
-2. Install dependencies
+<details>
+   <summary>Alternative Method (Expand)</summary>
 
-   ```bash
-   npm run setup
-   ```
+1.  Clone the repo
 
-3. Convert to TypeScript _(optional)_
-   ```bash
-   node .ts-convert
-   ```
+    ```bash
+    git clone --depth=1 https://github.com/benjammin4dayz/neu-react-vite.git
+    cd neu-react-vite
+    ```
+
+2.  Install dependencies
+
+    ```bash
+    npm run setup
+    ```
+
+    </details>
+
+### Configuration
+
+- Convert this template to TypeScript
+
+  ```bash
+  node .ts-convert
+  ```
 
 ## Usage
 
@@ -53,7 +83,9 @@ This template abstracts the setup process by using the [`neu` CLI][neu-cli] unde
 
 ## Troubleshooting
 
-### App displays a blank screen with no errors
+Before proceeding, try refreshing the page inside your app with `F5`, `CTRL + R`, or by right-clicking and selecting `Refresh`.
+
+### Blank screen with no errors during development
 
 Try pasting this snippet in the DevTools console tab:
 
@@ -64,6 +96,6 @@ window.location.href = 'http://localhost:3000';
 <!-- Links -->
 
 [neu-cli]: https://neutralino.js.org/docs/cli/neu-cli
-[neutralino-config]: (./neutralino.config.json)
+[neu-conf]: ./neutralino.config.json
 [npm-scripts]: ./package.json
 [workflow-file]: .github/workflows/create-neutralinojs-app.yml
