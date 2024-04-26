@@ -19,7 +19,7 @@
       "minWidth": 400,
       "minHeight": 200,
       "fullScreen": false,
-      "icon": "/react-src/public/icon.png",
+      "icon": "/react-src/public/favicon.ico",
       "alwaysOnTop": false,
       "enableInspector": false,
       "borderless": false,

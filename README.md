@@ -1,4 +1,4 @@
-# <img align="left" alt="neu-icon" height="48" src="react-src/src/assets/neutralinojs.svg" />neu-react-vite<img align="right" alt="react-icon" height="48" src="react-src/src/assets/vite.svg" /><img align="right" alt="react-icon" height="48" src="react-src/src/assets/react.svg" />
+# <img align="left" alt="neu-icon" height="48" src="react-src/src/assets/neutralino.svg" />neu-react-vite<img align="right" alt="react-icon" height="48" src="react-src/src/assets/vite.svg" /><img align="right" alt="react-icon" height="48" src="react-src/src/assets/react.svg" />
 
 A minimal template for building Neutralino.js apps using React and Vite.
 

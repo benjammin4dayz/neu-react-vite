@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import neutralinojsLogo from './assets/neutralinojs.svg';
+import neutralinoLogo from './assets/neutralino.svg';
 import reactLogo from './assets/react.svg';
 import viteLogo from './assets/vite.svg';
 import './App.css';
@@ -30,9 +30,9 @@ function App() {
       <div>
         <a href="https://neutralino.js.org" target="_blank">
           <img
-            src={neutralinojsLogo}
-            className="logo neutralinojs"
-            alt="Neutralinojs logo"
+            src={neutralinoLogo}
+            className="logo neutralino"
+            alt="Neutralino logo"
           />
         </a>
         <a href="https://react.dev" target="_blank">
@@ -43,7 +43,7 @@ function App() {
         </a>
       </div>
       <h1>neu-react-vite</h1>
-      <div className="card">
+      <div>
         <div>
           Neutralino.js Status:{' '}
           {neutralinoReady ? (
