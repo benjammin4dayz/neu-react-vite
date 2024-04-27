@@ -1,8 +1,29 @@
-# <img align="left" alt="neu-icon" height="48" src="react-src/src/assets/neutralino.svg" />neu-react-vite<img align="right" alt="react-icon" height="48" src="react-src/src/assets/vite.svg" /><img align="right" alt="react-icon" height="48" src="react-src/src/assets/react.svg" />
+# Neutralino File Browser
 
-A minimal template for building Neutralino.js apps using React and Vite.
+A rudimentary file browser app built using the `neu-react-vite` template.
 
 ## About
+
+This **read-only** file browser app uses `Neutralino.filesystem` provided by Neutralino's [Native API](https://neutralino.js.org/docs/api/overview).
+
+It is only granted the `readDirectory` permission, which you can confirm by checking the [`nativeAllowList`][neu-conf].
+
+### Features
+
+- Chonky File Browser - https://chonky.io/
+- Directory navigation
+- Platform agnostic<sup>[?](#platform-footnote)</sup>
+
+<a name="platform-footnote"></a>
+<sup>?</sup> In theory, this app can work on any platform/architecture supported by Neutralino.
+
+### Demo
+
+Here's a preview of the app in action!
+
+![Demo](https://github.com/benjammin4dayz/neu-react-vite/assets/42326027/29c371a2-a3ce-4acd-9e79-26f403161ed1)
+
+## About `neu-react-vite`
 
 This Neutralino app template features HMR _(Hot Module Replacement)_ and uses SWC _(Speedy Web Compiler)_. It can be converted to TypeScript with a <a href="#configuration">single command</a>!
 

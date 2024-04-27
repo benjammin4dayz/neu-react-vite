@@ -1,15 +1,12 @@
 import { useState, useEffect } from 'react';
-import neutralinoLogo from './assets/neutralino.svg';
-import reactLogo from './assets/react.svg';
-import viteLogo from './assets/vite.svg';
+import { CircularProgress as Loader } from '@mui/material';
+import { FileBrowser } from './FileBrowser';
 import './App.css';
 
 import * as Neutralino from '@neutralinojs/lib';
 
 const logError = (err) => console.log(err);
 const shutdownApp = () => {
-  // workaround if the app hangs when closing the main window
-  // https://github.com/neutralinojs/neutralinojs/issues/1179
   Neutralino.app.exit().catch(logError);
 };
 
@@ -19,48 +16,22 @@ function App() {
 
   useEffect(() => {
     Neutralino.events.on('ready', onReady).catch(logError);
+    Neutralino.events.on('windowClose', shutdownApp);
 
     return () => {
       Neutralino.events.off('ready', onReady).catch(logError);
+      Neutralino.events.off('windowClose', shutdownApp);
     };
   }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://neutralino.js.org" target="_blank">
-          <img
-            src={neutralinoLogo}
-            className="logo neutralino"
-            alt="Neutralino logo"
-          />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-      </div>
-      <h1>neu-react-vite</h1>
-      <div>
-        <div>
-          Neutralino.js Status:{' '}
-          {neutralinoReady ? (
-            <span style={{ color: 'green' }}>READY (v{window.NL_VERSION})</span>
-          ) : (
-            <span style={{ color: 'red' }}>ERROR</span>
-          )}
-        </div>
-        <br />
-        {neutralinoReady && (
-          <div>
-            <button onClick={shutdownApp}>Shutdown App</button>
-          </div>
-        )}
-      </div>
-      <p className="read-the-docs">Click on a logo to learn more</p>
-    </>
+    <div className="App">
+      {neutralinoReady ? (
+        <FileBrowser className="fileBrowser" />
+      ) : (
+        <Loader className="loader" />
+      )}
+    </div>
   );
 }
 
