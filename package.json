@@ -7,8 +7,8 @@
     "react-src"
   ],
   "scripts": {
-    "build": "neu build",
-    "build:release": "neu build --release",
+    "build": "neu build --clean",
+    "build:release": "neu build --clean --release",
     "clean": "npm run clean:neu -s && npm run clean:react -s",
     "clean:neu": "rm -rf dist/ bin/ node_modules/",
     "clean:react": "cd react-src && rm -rf dist/ node_modules/",
@@ -17,6 +17,6 @@
     "start": "neu run -- --window-enable-inspector"
   },
   "devDependencies": {
-    "@neutralinojs/neu": "^11.0.1"
+    "@neutralinojs/neu": "^11.2.0"
   }
 }

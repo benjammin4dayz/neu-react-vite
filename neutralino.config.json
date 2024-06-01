@@ -4,6 +4,7 @@
   "defaultMode": "window",
   "documentRoot": "/react-src/dist/",
   "url": "/",
+  "singlePageServe": false,
   "enableServer": true,
   "enableNativeAPI": true,
   "nativeAllowList": ["app.*"],
@@ -33,14 +34,19 @@
   "cli": {
     "binaryName": "neu-react-vite",
     "resourcesPath": "/react-src/dist/",
+    "resourcesExclude": "",
     "extensionsPath": "/extensions/",
+    "extensionsExclude": "",
+    "distributionPath": "/dist/",
     "frontendLibrary": {
       "patchFile": "/react-src/index.html",
       "devUrl": "http://localhost:3000",
       "projectPath": "/react-src/",
       "initCommand": "cd .. && npm ci",
       "devCommand": "npm run dev",
+      "waitTimeout": 20000,
       "buildCommand": "npm run build"
-    }
+    },
+    "binaryVersion": "5.2.0"
   }
 }
