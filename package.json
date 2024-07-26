@@ -17,6 +17,6 @@
     "start": "neu run -- --window-enable-inspector"
   },
   "devDependencies": {
-    "@neutralinojs/neu": "^11.2.0"
+    "@neutralinojs/neu": "^11.2.2"
   }
 }
