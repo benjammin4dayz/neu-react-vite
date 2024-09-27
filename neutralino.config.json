@@ -1,6 +1,8 @@
 {
   "applicationId": "neu.react.vite",
   "version": "0.1.0",
+  "author": "",
+  "description": "",
   "defaultMode": "window",
   "documentRoot": "/react-src/dist/",
   "url": "/",
@@ -8,6 +10,12 @@
   "enableServer": true,
   "enableNativeAPI": true,
   "nativeAllowList": ["app.*"],
+  "enableExtensions": true,
+  "extensions": [
+    {
+      "id": "js.neutralino.devtools"
+    }
+  ],
   "logging": {
     "enabled": true,
     "writeToLogFile": true
@@ -48,6 +56,6 @@
       "waitTimeout": 20000,
       "buildCommand": "npm run build"
     },
-    "binaryVersion": "5.3.0"
+    "binaryVersion": "5.4.0"
   }
 }

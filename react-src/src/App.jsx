@@ -6,11 +6,10 @@ import './App.css';
 
 import * as Neutralino from '@neutralinojs/lib';
 
-const logError = (err) => console.log(err);
 const shutdownApp = () => {
   // workaround if the app hangs when closing the main window
   // https://github.com/neutralinojs/neutralinojs/issues/1179
-  Neutralino.app.exit().catch(logError);
+  void Neutralino.app.exit();
 };
 
 function App() {
@@ -18,10 +17,10 @@ function App() {
   const onReady = () => setNeutralinoReady(true);
 
   useEffect(() => {
-    Neutralino.events.on('ready', onReady).catch(logError);
+    void Neutralino.events.on('ready', onReady);
 
     return () => {
-      Neutralino.events.off('ready', onReady).catch(logError);
+      void Neutralino.events.off('ready', onReady);
     };
   }, []);
 

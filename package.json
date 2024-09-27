@@ -16,7 +16,7 @@
     "setup": "npm ci && neu update",
     "start": "neu run -- --window-enable-inspector"
   },
-  "devDependencies": {
-    "@neutralinojs/neu": "^11.2.2"
+  "dependencies": {
+    "@neutralinojs/neu": "^11.3.0"
   }
 }
