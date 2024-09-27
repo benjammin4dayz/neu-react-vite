@@ -1,0 +1,48 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-js:
+    name: Test JavaScript build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/iron
+      - name: Install dependencies
+        run: |
+          npm ci || npm install
+          npx @neutralinojs/neu update
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build
+  build-ts:
+    name: Test TypeScript build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/iron
+      - name: Convert to TypeScript
+        run: |
+          echo "y" | node .ts-convert
+      - name: Install dependencies
+        run: |
+          npm ci || npm install
+          npx @neutralinojs/neu update
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: cd react-src && npx tsc
+      - name: Build
+        run: npm run build
