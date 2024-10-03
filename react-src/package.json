@@ -1,14 +1,14 @@
 {
   "name": "react-vite",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "type": "module",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "vite",
     "build": "vite build",
+    "dev": "vite",
     "lint": "eslint src/ --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "npm run dev"
   },
   "dependencies": {
     "@neutralinojs/lib": "^5.4.0",
@@ -16,19 +16,19 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.9",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.7.0",
+    "@vitejs/plugin-react-swc": "^3.7.1",
     "eslint": "^8.57.1",
-    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.12",
     "vite": "^5.4.8"
   },
   "optionalDependencies": {
-    "@rollup/rollup-darwin-arm64": "^4.22.4",
-    "@rollup/rollup-darwin-x64": "^4.22.4",
-    "@rollup/rollup-linux-x64-gnu": "^4.22.4",
-    "@rollup/rollup-win32-x64-msvc": "^4.22.4"
+    "@rollup/rollup-darwin-arm64": "^4.24.0",
+    "@rollup/rollup-darwin-x64": "^4.24.0",
+    "@rollup/rollup-linux-x64-gnu": "^4.24.0",
+    "@rollup/rollup-win32-x64-msvc": "^4.24.0"
   }
 }
