@@ -9,7 +9,7 @@
   "singlePageServe": false,
   "enableServer": true,
   "enableNativeAPI": true,
-  "nativeAllowList": ["app.*"],
+  "nativeAllowList": ["app.*", "extensions.getStats"],
   "enableExtensions": true,
   "extensions": [
     {
