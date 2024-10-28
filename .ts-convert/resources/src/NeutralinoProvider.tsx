@@ -82,7 +82,11 @@ export const NeutralinoProvider = ({
         : ready
         ? children
         : error
-        ? fallback || <p>Fatal Error!</p>
+        ? fallback || (
+            <button onClick={() => window.location.reload()}>
+              Fatal Error! Click to reload.
+            </button>
+          )
         : loader || <p>Loading...</p>}
     </NeutralinoContext.Provider>
   );
