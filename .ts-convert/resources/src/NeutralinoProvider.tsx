@@ -51,27 +51,25 @@ export const NeutralinoProvider = ({
   useEffect(() => {
     try {
       Neutralino.init();
+      //
+      // If the state is reloaded while Neutralino is already initialized,
+      // the "ready" event won't fire. This should always be accurate because
+      // Neutralino's init function either passes or throws an error.
+      //
+      setReady(true);
+    } catch (e) {
+      errorTimeout.current = setTimeout(() => {
+        setError(true);
+        errorTimeout.current = null;
+      }, failAfterMs);
+      console.warn('Neutralino failed to initialize', e);
+    }
+
+    return () => {
       if (errorTimeout.current) {
         clearTimeout(errorTimeout.current);
         errorTimeout.current = null;
       }
-    } catch (e) {
-      if (!errorTimeout.current) {
-        errorTimeout.current = setTimeout(() => {
-          setError(true);
-          errorTimeout.current = null;
-        }, failAfterMs);
-      }
-      console.warn('Neutralino failed to initialize', e);
-    }
-
-    const onReady = () => {
-      setReady(true);
-    };
-    void Neutralino.events.on('ready', onReady);
-
-    return () => {
-      void Neutralino.events.off('ready', onReady);
     };
   }, [failAfterMs]);
 
