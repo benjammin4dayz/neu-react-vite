@@ -1,32 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import './App.css';
 import neutralinoLogo from './assets/neutralino.svg';
 import reactLogo from './assets/react.svg';
 import viteLogo from './assets/vite.svg';
-import './App.css';
-
-import * as Neutralino from '@neutralinojs/lib';
-
-const shutdownApp = () => {
-  // workaround if the app hangs when closing the main window
-  // https://github.com/neutralinojs/neutralinojs/issues/1179
-  void Neutralino.app.exit();
-};
+import { useNeutralinoContext } from './NeutralinoProvider';
 
 function App() {
-  const [neutralinoReady, setNeutralinoReady] = useState(false);
-  const onReady = () => setNeutralinoReady(true);
+  const { exit } = useNeutralinoContext();
 
-  useEffect(() => {
-    void Neutralino.events.on('ready', onReady);
-
-    return () => {
-      void Neutralino.events.off('ready', onReady);
-    };
-  }, []);
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
+      <aside role="complementary">
         <a href="https://neutralino.js.org" target="_blank">
           <img
             src={neutralinoLogo}
@@ -40,25 +26,31 @@ function App() {
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-      </div>
-      <h1>neu-react-vite</h1>
-      <div>
-        <div>
-          Neutralino.js Status:{' '}
-          {neutralinoReady ? (
-            <span style={{ color: 'green' }}>READY (v{window.NL_VERSION})</span>
-          ) : (
-            <span style={{ color: 'red' }}>ERROR</span>
-          )}
+      </aside>
+      <header>
+        <h1 style={{ marginTop: '0' }}>neu-react-vite</h1>
+      </header>
+      <main>
+        <p>
+          Running Neutralino v{window.NL_VERSION} on {window.NL_OS}{' '}
+          {window.NL_ARCH}
+        </p>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            gap: '0.5rem',
+            margin: '2rem 0',
+          }}
+        >
+          <button onClick={() => setCount(count => count + 1)}>
+            {count || 'Counter'}
+          </button>
+          <button onClick={exit}>Shutdown App</button>
         </div>
-        <br />
-        {neutralinoReady && (
-          <div>
-            <button onClick={shutdownApp}>Shutdown App</button>
-          </div>
-        )}
-      </div>
-      <p className="read-the-docs">Click on a logo to learn more</p>
+      </main>
+      <footer className="read-the-docs">Click on a logo to learn more</footer>
     </>
   );
 }
