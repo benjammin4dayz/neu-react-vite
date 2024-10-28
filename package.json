@@ -11,7 +11,7 @@
     "build:release": "npm run build -- --release",
     "clean": "rimraf .tmp/ dist/ node_modules/ react-src/dist/ react-src/node_modules/",
     "lint": "npm run lint --workspaces --if-present",
-    "setup": "npm ci & neu update",
+    "setup": "npm ci && neu update",
     "start": "neu run -- --window-enable-inspector"
   },
   "devDependencies": {
