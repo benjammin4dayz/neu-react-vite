@@ -42,7 +42,7 @@ export const NeutralinoProvider = ({
   const [ready, setReady] = useState(false);
   const [error, setError] = useState(false);
 
-  const errorTimeout = useRef<NodeJS.Timeout | null>(null);
+  const errorTimeout = useRef<number | null>(null);
 
   const exit = () => {
     void Neutralino.app.exit();
