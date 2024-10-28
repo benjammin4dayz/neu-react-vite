@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/benjammin4dayz/neutralino-schema/refs/heads/main/dist/neutralino.config.schema.json",
   "applicationId": "neu.react.vite",
   "version": "0.1.0",
   "author": "",
