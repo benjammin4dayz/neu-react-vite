@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "npm run vscode:debug",
+      // "env": { "NO_COLOR": "1" }, // If terminal does not display ANSI escapes
+      "internalConsoleOptions": "openOnFirstSessionStart",
+      "name": "Neu React Vite Runner",
+      "request": "launch",
+      "type": "node-terminal",
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "killOnServerStop": true,
+        "pattern": "Local:.*http://localhost:([0-9]+)/",
+        "uriFormat": "http://localhost:%s",
+        "webRoot": "${workspaceFolder}${pathSeparator}react-src"
+      },
+      "postDebugTask": "npm: vscode:postdebug"
+    }
+  ]
+}
