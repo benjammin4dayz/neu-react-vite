@@ -23,12 +23,12 @@
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
-    "vite": "^5.4.10"
+    "vite": "^5.4.11"
   },
   "optionalDependencies": {
-    "@rollup/rollup-darwin-arm64": "^4.24.2",
-    "@rollup/rollup-darwin-x64": "^4.24.2",
-    "@rollup/rollup-linux-x64-gnu": "^4.24.2",
-    "@rollup/rollup-win32-x64-msvc": "^4.24.2"
+    "@rollup/rollup-darwin-arm64": "^4.27.4",
+    "@rollup/rollup-darwin-x64": "^4.27.4",
+    "@rollup/rollup-linux-x64-gnu": "^4.27.4",
+    "@rollup/rollup-win32-x64-msvc": "^4.27.4"
   }
 }
