@@ -10,13 +10,7 @@
   "singlePageServe": false,
   "enableServer": true,
   "enableNativeAPI": true,
-  "nativeAllowList": ["app.*", "extensions.getStats"],
-  "enableExtensions": true,
-  "extensions": [
-    {
-      "id": "js.neutralino.devtools"
-    }
-  ],
+  "nativeAllowList": ["app.*"],
   "logging": {
     "enabled": true,
     "writeToLogFile": true
@@ -57,6 +51,6 @@
       "waitTimeout": 20000,
       "buildCommand": "npm run build"
     },
-    "binaryVersion": "5.4.0"
+    "binaryVersion": "5.5.0"
   }
 }
